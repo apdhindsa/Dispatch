@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Dispatch.API.Controllers
+namespace Dispatch.Web.Controllers
 {
     public class HomeController : Controller
     {
