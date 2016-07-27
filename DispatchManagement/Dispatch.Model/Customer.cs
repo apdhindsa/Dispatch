@@ -8,7 +8,6 @@ namespace Dispatch.Model
 {
     public class Customer
     {
-        
         public int Id { get; set; }
         public string Status { get; set; }
         public string Address { get; set; }
