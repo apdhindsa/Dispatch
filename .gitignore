@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+DispatchManagement/Dispatch.Model/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
