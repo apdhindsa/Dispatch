@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dispatch.Model
 {
     public class Customer
     {
-        public int Id { get; set; }
-        public string Status { get; set; }
+        public int CustomerId { get; set; }
+        public string Name { get; set; }
         public string Address { get; set; }
         public string Address2 { get; set; }
         public string Address3 { get; set; }
-        public string Country { get; set; }
-        public string State { get; set; }
+        public int Country { get; set; }
+        public int State { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
         public bool IsSameAsMailingAddress { get; set; }
@@ -30,10 +26,14 @@ namespace Dispatch.Model
         public string Extension { get; set; }
         public string Fax { get; set; }
         public string TollFree { get; set; }
+        public string Email { get; set; }
         public string SecondaryContact { get; set; }
         public string SecondaryMail { get; set; }
         public bool IsBroker { get; set; }
+        public short Status { get; set; }
+        public int UserId { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
+        public int CustomerAdvId { get; set; }
     }
 }
