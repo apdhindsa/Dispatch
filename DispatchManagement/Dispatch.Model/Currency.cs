@@ -1,20 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dispatch.Model
 {
     public class Currency
     {
+        // Primary key
         public int CurrencyTypeId { get; set; }
         public string CurrencyName { get; set; }
         public string CurrencyShortName { get; set; }
         public string CurrencySymbol { get; set; }
+        // Foreign key
         public int UserId { get; set; }
         public short Status { get; set; }
-        public DateTime CreatedOn { get; set; }
-        public DateTime ModifiedOn { get; set; }
+        public DateTime dtCreated { get; set; }
+        public DateTime dtModified { get; set; }
+
+        // Navigation properties 
+        public  CustomerAdv CustomerAdv { get; set; }
+        
     }
 }

@@ -44,7 +44,9 @@
     <Compile Include="Currency.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerAdv.cs" />
+    <Compile Include="IAuditInfo.cs" />
     <Compile Include="Master.cs" />
+    <Compile Include="MasterTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
