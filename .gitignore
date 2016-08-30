@@ -243,5 +243,10 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+<<<<<<< HEAD
 DispatchManagement/.vs/DispatchManagement/v14/.suo
 DispatchManagement/Dispatch.Model/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+=======
+DispatchManagement/Dispatch.Model/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+DispatchManagement/.vs/DispatchManagement/v14/.suo
+>>>>>>> 1a65908ea4eacfea93471abe41131fb9dce60fde
