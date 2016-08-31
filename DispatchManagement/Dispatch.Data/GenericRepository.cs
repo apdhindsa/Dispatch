@@ -55,6 +55,7 @@ namespace Dispatch.Data
             }
 
             entry.State = EntityState.Modified;
+            
         }
 
         public virtual void Detach(T entity)

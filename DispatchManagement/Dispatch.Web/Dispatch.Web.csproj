@@ -145,12 +145,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CommonClasses\CustomerSearch.cs" />
+    <Compile Include="CommonClasses\PageConstants.cs" />
+    <Compile Include="Controllers-Api\CustomerController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\accordion.css" />
@@ -240,6 +245,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Customer\Customer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,6 +259,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dispatch.Data\Dispatch.Data.csproj">
+      <Project>{4a2033a5-da95-4423-a368-5089e489476f}</Project>
+      <Name>Dispatch.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dispatch.Model\Dispatch.Model.csproj">
+      <Project>{d4718057-d944-4d1b-a803-e0f072f1163e}</Project>
+      <Name>Dispatch.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
