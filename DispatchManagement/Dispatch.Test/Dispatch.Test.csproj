@@ -329,6 +329,16 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dispatch.Data\Dispatch.Data.csproj">
+      <Project>{4A2033A5-DA95-4423-A368-5089E489476F}</Project>
+      <Name>Dispatch.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dispatch.Model\Dispatch.Model.csproj">
+      <Project>{d4718057-d944-4d1b-a803-e0f072f1163e}</Project>
+      <Name>Dispatch.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -343,7 +353,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3051</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

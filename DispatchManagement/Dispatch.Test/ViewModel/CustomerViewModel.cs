@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Dispatch.Data;
+using Dispatch.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http.ModelBinding;
 
 namespace Dispatch.Test.ViewModel
 {
