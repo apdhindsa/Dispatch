@@ -7,6 +7,6 @@ namespace Dispatch.Test.Common
 {
     public class CustomerSearch
     {
-        public string ProductName { get; set; }
+        public string CustomerName { get; set; }
     }
 }

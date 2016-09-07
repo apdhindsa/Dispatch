@@ -122,7 +122,7 @@ namespace Dispatch.Test.ViewModel
         public void Search()
         {
             Customers = _unit.Customer.GetAll().Where(p =>
-                   p.Name.Contains(SearchEntity.ProductName)).
+                   p.Name.Contains(SearchEntity.CustomerName)).
               OrderBy(p => p.Name).ToList();
             SetUIState(PageConstants.LIST);
         }
