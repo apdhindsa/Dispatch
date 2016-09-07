@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = "Customer";
+}
+
+<h2>Customer</h2>
+
+<div ng-app="app"
+     ng-controller="CustomerController as vm">
+    <form name="customerForm" novalidate>
+        <!-- ** BEGIN MESSAGE AREA ** -->
+        <div ng-hide="vm.uiState.isValid || (customerForm.$valid && !customerForm.$pristine)" class="row">
+            <div class="col-xs-12">
+                <div class="alert alert-danger
+                    alert-dismissable"
+                     role="alert">
+                    <button type="button" class="close"
+                            data-dismiss="alert">
+                        <span aria-hidden="true">
+                            &times;
+                        </span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <ul>
+                        <li ng-repeat="msg in vm.uiState.messages">
+                            {{msg.message}}
+                        </li>
+                        <li ng-show="customerForm.customerName.$error.required">
+                            Customer name must be filled in.
+                        </li>
+
+                </div>
+            </div>
+        </div>
+        <!-- ** END MESSAGE AREA ** -->
+        <!-- ** BEGIN SEARCH AREA ** -->
+        <div ng-show="vm.uiState.isSearchAreaVisible" class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title">Search for Customers</h1>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="searchCustomerName"></label>
+                    <input type="text" class="form-control"
+                           ng-model="vm.searchInput.customerName" />
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="button"
+                        class="btn btn-sm btn-primary"
+                        ng-click="vm.search()">
+                    <i class="glyphicon glyphicon-search"></i>
+                    &nbsp;Search
+                </button>
+                <button type="button"
+                        class="btn btn-sm btn-primary"
+                        ng-click="vm.resetSearch()">
+                    <i class="glyphicon glyphicon-share-alt"></i>
+                    &nbsp;Reset
+                </button>
+                <button type="button"
+                        class="btn btn-sm btn-success"
+                        ng-click="vm.addClick()">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    &nbsp;Add
+                </button>
+            </div>
+        </div>
+        <!-- ** END SEARCH AREA ** -->
+        <!-- ** BEGIN DETAIL AREA ** -->
+        <div ng-show="vm.uiState.isDetailAreaVisible" class="panel panel-primary">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    Customer Details
+                </h1>
+            </div>
+            <div class="panel-body">
+                <!-- ** BEGIN INPUT AREA -->
+
+                <div class="form-group">
+                    <label for="customerName">Customer Name</label>
+                    <input type="text" class="form-control"
+                           id="customerName"
+                           name="customerName"
+                           required
+                           ng-minlength="4"
+                           ng-maxlength="150"
+                           ng-model="vm.customer.CustomerName" />
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control"
+                           id="address"
+                           name="address"
+                           ng-minlength="4"
+                           ng-maxlength="150"
+                           ng-model="vm.customer.Address" />
+                </div>
+
+                <div class="form-group">
+                    <label for="address2">Address2</label>
+                    <input type="text" class="form-control"
+                           id="address2"
+                           name="address2"
+                           ng-minlength="4"
+                           ng-maxlength="150"
+                           ng-model="vm.customer.Address2" />
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control"
+                           id="city"
+                           name="city"
+                           ng-minlength="4"
+                           ng-maxlength="150"
+                           ng-model="vm.customer.City" />
+                </div>
+                <!-- ** END INPUT AREA -->
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-sm btn-primary"
+                                type="button"
+                                ng-click="vm.saveClick(customerForm)">
+                            <i class="glyphicon glyphicon-floppy-disk"></i>
+                            &nbsp;Save
+                        </button>
+                        <button class="btn btn-sm btn-primary"
+                                type="button"
+                                ng-click="vm.cancelClick(customerForm)">
+                            <i class="glyphicon glyphicon-remove-circle"></i>
+                            &nbsp;Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ** END DETAIL AREA ** -->
+        <!-- ** BEGIN LIST AREA ** -->
+        <div ng-show="vm.uiState.isListAreaVisible" class="table-responsive">
+            <table id="customerTable"
+                   class="table table-condensed table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="pdsa-action-button-column">
+                            Edit
+                        </th>
+                        <th>Customer Name</th>
+                        <th>Address</th>
+                        <th>Address2</th>
+                        <th>Address3</th>
+                        <th>City</th>
+                        <th class="pdsa-action-button-column">
+                            Delete
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="customer in vm.customers | filter: vm.searchImmediate">
+                        <td class="pdsa-action-button-column">
+                            <a href="#"
+                               ng-click="vm.editClick(customer.CustomerId)"
+                               class="btn btn-default btn-sm">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                        </td>
+                        <td>{{customer.CustomerName}}</td>
+                        <td>{{customer.Address}}</td>
+                        <td>{{customer.Address2}}</td>
+                        <td>{{customer.Address3}}</td>
+                        <td>{{customer.City}}</td>
+                        <td class="pdsa-action-button-column">
+                            <a href="#"
+                               ng-click="vm.deleteClick(customer.CustomerId)"
+                               class="btn btn-default btn-sm">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- ** END LIST AREA ** -->
+    </form>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/app/app.module.js"></script>
+    <script src="~/app/customer.controller.js"></script>
+}
+
+
+
+
