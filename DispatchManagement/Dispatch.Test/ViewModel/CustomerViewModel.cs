@@ -135,7 +135,7 @@ namespace Dispatch.Test.ViewModel
 
         public void Save()
         {
-            Messages.Clear();
+            //Messages.Clear();
             try
             {
 
