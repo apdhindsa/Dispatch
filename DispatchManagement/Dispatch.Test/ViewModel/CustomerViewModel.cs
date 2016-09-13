@@ -15,6 +15,11 @@ namespace Dispatch.Test.ViewModel
 
         private ApplicationUnit _unit = new ApplicationUnit();
 
+        public CustomerViewModel()
+        {
+            Messages = new ModelStateDictionary();
+        }
+
         #region Properties
 
         public List<Customer> Customers { get; set; }
@@ -135,16 +140,31 @@ namespace Dispatch.Test.ViewModel
 
         public void Save()
         {
-            //Messages.Clear();
+            Messages.Clear();
             try
             {
 
                 if (PageMode == PageConstants.EDIT)
                 {
+                   
                     _unit.Customer.Update(Entity);
                 }
                 else if (PageMode == PageConstants.ADD)
                 {
+                    Entity.Address2 = "test";
+                    Entity.Address3 = "test2";
+                    Entity.Country = 1;
+                    Entity.State = 1;
+                    Entity.City = "Testing";
+                    Entity.ZipCode = "v3r1r5";
+                    Entity.IsSameAsMailingAddress = true;
+                    Entity.PrimaryContact = "test";
+                    Entity.Telephone = "123456789";
+                    Entity.Email = "as@dd.ff";
+                    Entity.SecondaryContact = "test2";
+                    Entity.UserId = 1;
+                    Entity.dtCreated = DateTime.Now;
+                    Entity.dtModified = DateTime.Now;
                     _unit.Customer.Add(Entity);
                 }
                 _unit.SaveChanges();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dispatch.Model
 {
@@ -35,7 +36,10 @@ namespace Dispatch.Model
         public short Status { get; set; }
         // Foreign key 
         public int UserId { get; set; }
+
+       
         public DateTime dtCreated { get; set; }
+    
         public DateTime dtModified { get; set; }
       
 

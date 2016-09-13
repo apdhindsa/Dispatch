@@ -9,7 +9,7 @@
      ng-controller="CustomerController as vm">
     <form name="customerForm" novalidate>
         <!-- ** BEGIN MESSAGE AREA ** -->
-        <div ng-hide="vm.uiState.isValid || (customerForm.$valid && !customerForm.$pristine)" class="row">
+        @*<div ng-hide="vm.uiState.isValid || (customerForm.$valid && !customerForm.$pristine)" class="row">
             <div class="col-xs-12">
                 <div class="alert alert-danger
                     alert-dismissable"
@@ -25,13 +25,13 @@
                         <li ng-repeat="msg in vm.uiState.messages">
                             {{msg.message}}
                         </li>
-                        <li ng-show="customerForm.customerName.$error.required">
+                        <li ng-show="customerForm.Name.$error.required">
                             Customer name must be filled in.
                         </li>
-
-                </div>
+                    </ul>
             </div>
-        </div>
+            </div>
+        </div>*@
         <!-- ** END MESSAGE AREA ** -->
         <!-- ** BEGIN SEARCH AREA ** -->
         <div ng-show="vm.uiState.isSearchAreaVisible" class="panel panel-primary">
@@ -40,7 +40,7 @@
             </div>
             <div class="panel-body">
                 <div class="form-group">
-                    <label for="searchCustomerName"></label>
+                    <label for="searchCustomerName">Customer Name</label>
                     <input type="text" class="form-control"
                            ng-model="vm.searchInput.customerName" />
                 </div>
@@ -80,12 +80,11 @@
                 <div class="form-group">
                     <label for="customerName">Customer Name</label>
                     <input type="text" class="form-control"
-                           id="customerName"
-                           name="customerName"
-                           required
+                           id="name"
+                           name="name"
                            ng-minlength="4"
                            ng-maxlength="150"
-                           ng-model="vm.customer.CustomerName" />
+                           ng-model="vm.customer.Name" />
                 </div>
 
                 <div class="form-group">
@@ -168,7 +167,7 @@
                                 <i class="glyphicon glyphicon-edit"></i>
                             </a>
                         </td>
-                        <td>{{customer.CustomerName}}</td>
+                        <td>{{customer.Name}}</td>
                         <td>{{customer.Address}}</td>
                         <td>{{customer.Address2}}</td>
                         <td>{{customer.Address3}}</td>

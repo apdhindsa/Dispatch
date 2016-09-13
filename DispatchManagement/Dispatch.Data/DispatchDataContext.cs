@@ -46,10 +46,10 @@ namespace Dispatch.Data
 
                 if (entry.State == EntityState.Added)
                 {
-                    e.dtCreated = DateTime.Now;
+                    e.dtCreated = DateTime.Now.ToUniversalTime();
                 }
 
-                e.dtModified = DateTime.Now;
+                e.dtModified = DateTime.Now.ToUniversalTime();
             }
         }
 

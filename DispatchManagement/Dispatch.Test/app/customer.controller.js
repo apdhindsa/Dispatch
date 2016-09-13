@@ -72,23 +72,23 @@
 
 
         function saveClick(customerForm) {
-            if (customerForm.$valid) {
-                if (validateData()) {
-                    customerForm.$setPristine();
+            //if (customerForm.$valid) {
+            //    if (validateData()) {
+            //        customerForm.$setPristine();
                     if (vm.uiState.mode === pageMode.ADD) {
                         insertData();
                     }
                     else {
                         updateData();
                     }
-                }
-                else {
-                    customerForm.$valid = false;
-                }
-            }
-            else {
-                vm.uiState.isValid = false;
-            }
+            //    }
+            //    else {
+            //        customerForm.$valid = false;
+            //    }
+            //}
+            //else {
+            //    vm.uiState.isValid = false;
+            //}
         }
 
 
@@ -164,13 +164,14 @@
 
 
 
-            if (vm.customer.CustomerName == "") {
-                addValidationMessage('name', 'Name Cannot be blank.');
-            }
+            //if (vm.customer.Name == "") {
+            //    addValidationMessage('Name', 'Name Cannot be blank.');
+            //}
 
-            vm.uiState.isValid = (vm.uiState.messages.length == 0);
+            //vm.uiState.isValid = (vm.uiState.messages.length == 0);
 
-            return vm.uiState.isValid;
+            //return vm.uiState.isValid;
+            return true;
         }
 
 
@@ -212,7 +213,7 @@
         function initEntity() {
             return {
 
-                CustomerName: '',
+                Name: '',
                 Address: '',
                 Address2: '',
                 Address3: '',
